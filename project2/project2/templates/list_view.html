@@ -1,0 +1,53 @@
+<head>
+	<style>
+        body {background-color:rgb(224, 224, 191) ;}
+        form{color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-block-end: 25px;
+            font-size: 120%;
+            margin-inline-start: 38.5%;}
+         h1{
+             font-size:300%;
+             text-decoration: underline;
+             text-align: center;
+             color:brown;
+         }   
+         .space {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+    }
+    input[type=button]{
+        background-color: #1ad39b;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 16px 32px;
+    text-decoration: underline;
+    font-size: 120%;
+    margin: 4px 2px;
+    cursor: pointer;
+        }    
+
+    </style>
+</head>
+
+
+<div class="main">
+
+	{% for data in dataset %}
+	<p>Name: {{ data.Name }}<br/></p>
+	<p>City: {{ data.City }}<br/></p>
+	<p>Class: {{ data.Class }}<br/></p>
+	<p>Age: {{ data.Age }}<br/></p>
+	<p>RollNo: {{ data.RollNo }}<br/></p>
+	<input type="button" onclick="window.location.href='http://127.0.0.1:8000/{{data.id}}/';" value="Detail"/>
+	<input type="button" onclick="window.location.href='http://127.0.0.1:8000/{{data.id}}/update/';" value="Update"/>
+	<input type="button" onclick="window.location.href='http://127.0.0.1:8000/{{data.id}}/delete/';" value="Delete"/>
+	<hr/>
+
+	{% endfor %}
+
+</div>
