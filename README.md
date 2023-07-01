@@ -1,1 +1,1 @@
-# lnb_task_2
+# Django_project 
